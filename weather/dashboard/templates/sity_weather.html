@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather in {{ city.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Weather in {{ city.name }}</h1>
+    </header>
+    <main>
+        <div class="weather-details">
+            <h2>{{ city.name }}, {{ city.country }}</h2>
+            <p><strong>Latitude:</strong> {{ city.latitude }}</p>
+            <p><strong>Longitude:</strong> {{ city.longitude }}</p>
+            <h3>Weather Data</h3>
+            {% if weather_data %}
+                <ul>
+                    {% for data in weather_data %}
+                    <li>
+                        <p><strong>Timestamp:</strong> {{ data.timestamp }}</p>
+                        <p><strong>Temperature:</strong> {{ data.temperature }}°C</p>
+                        <p><strong>Humidity:</strong> {{ data.humidity }}%</p>
+                        <p><strong>Description:</strong> {{ data.weather_description }}</p>
+                        <p><strong>Wind Speed:</strong> {{ data.wind_speed }} m/s</p>
+                        <p><strong>Wind Direction:</strong> {{ data.wind_direction }}°</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No weather data available for this city.</p>
+            {% endif %}
+        </div>
+        <a href="/" class="back-link">Back to Cities</a>
+    </main>
+</body>
+</html>

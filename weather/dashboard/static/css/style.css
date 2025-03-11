@@ -1,0 +1,95 @@
+/* Загальний стиль для сторінки */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Контейнер для списку міст */
+#cities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Вирівнювання по центру */
+    gap: 20px; /* Відступи між квадратиками */
+    padding: 20px;
+}
+
+
+/* Стиль для кожного міського квадратика */
+.city-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.city-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовок міста */
+.city-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Параграфи з координатами */
+.city-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Кнопка для перегляду деталей */
+.city-card button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.city-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Контейнер для деталей міста */
+#city-details {
+    display: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+/* Стиль для кнопки "Back to Cities" */
+#city-details button {
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#city-details button:hover {
+    background-color: #c44125;
+}
+
+
